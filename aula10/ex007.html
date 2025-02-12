@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Números</title>
+    <style>
+        body {
+            font: normal 18pt arial;
+            background-image: linear-gradient(to right, rgb(170, 163, 163) , rgb(236, 236, 236));
+        }
+
+        input {
+            font: normal 18pt arial;
+            width: 100px;
+            border-radius: 5px;  
+            border: 1px solid blueviolet         
+        }
+
+        input#botao {
+            border-radius: 5px;
+            border: none;
+            box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.26);
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: rgb(11, 201, 11);
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.473);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Somando Valores</h1>
+    <input type="number" name="txtn1" id="txtn1"> +
+    <input type="number" name="txtn2" id="txtn2">
+    <input id="botao" type="button" value="somar" onclick="somar()">
+    <div id="res">Resultado</div>
+    <script>
+        function somar() {
+            var tn1 = document.getElementById('txtn1')/*selecionado por id*/
+            var tn2 = document.querySelector('input#txtn2')/*selecionado por seletor*/
+            var res = document.getElementById('res')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+            res.innerHTML = `A soma entre ${n1} e ${n2} é igual <strong>${s}</strong>`
+        }
+    </script>
+
+    
+</body>
+</html>
