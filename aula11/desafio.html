@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-color: rgb(191, 208, 245);
+        }
+
+        h1 {
+            background-image: radial-gradient(green, yellow);
+            padding: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(3, 3, 107);
+            margin-bottom: 30px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.39);
+        }
+
+        input#txtnac {
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+
+        input#btn{
+            border-radius: 5px;
+            border: 1px solid gray;
+            padding: 2px;
+            width: 75px;
+            box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.329);
+        }
+    </style>
+</head>
+<body>
+    <h1>Sua nacionalidade</h1>
+    <strong>Onde você nasceu:</strong> <input type="text" name="txtnac" id="txtnac">
+    <input id="btn" type="button" value="Verificar" onclick="verificar()">
+    <div id="res">
+
+    </div>
+    <script>
+        function verificar() {
+        var país = 'Brasil'
+        var txtnasc = document.querySelector('txtnac')
+        var res = document.querySelector('div#res')
+        var nasc = (txtnac.value)
+        res.innerHTML = `<p>Você nasceu no ${nasc}!</P>`
+            if (nasc == país){
+                res.innerHTML += `<p>Você é Brasileiro!</p>`
+            }else{
+                res.innerHTML += `<p>Você é estrangeiro!</p>`
+            }
+        }        
+    </script>    
+</body>
+</html>
